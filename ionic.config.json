@@ -1,0 +1,7 @@
+{
+  "name": "DadosApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
