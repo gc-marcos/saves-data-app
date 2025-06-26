@@ -1,29 +1,32 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Entrada de Dados
+      Save Data App
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <form (ngSubmit)="saveData()">
-    <ion-item>
-      <ion-label position="floating">Nome</ion-label>
-      <ion-input [(ngModel)]="data.name" name="name" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Idade</ion-label>
-      <ion-input type="number" [(ngModel)]="data.age" name="age" required></ion-input>
-    </ion-item>
-    <ion-button expand="full" type="submit">Salvar</ion-button>
-  </form>
 
-  <ion-list>
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input [(ngModel)]="data.name" type="text" color="dark"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Idade</ion-label>
+    <ion-input [(ngModel)]="data.age" type="number" color="dark"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="saveData()">Salvar</ion-button>
+
+  <ion-list class="saved-list" *ngIf="storedData.length > 0">
     <ion-item *ngFor="let item of storedData">
       <ion-label>
-        <h2>Nome: {{ item.name}}</h2>
+        <h2>{{ item.name }}</h2>
         <p>Idade: {{ item.age }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
+
 </ion-content>

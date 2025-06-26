@@ -1,41 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+
 @Component({
-selector: 'app-home',
-templateUrl: 'home.page.html',
-styleUrls: ['home.page.scss'],
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
-data = {
-name: '',
-age: null
-};
+export class HomePage {
+  data = {
+    name: '',
+    age: null
+  };
 
-storedData: any[] = [];
+  storedData: any[] = [];
 
-constructor(private storage: Storage) {}
-async ngOnInit() {
-  await this.storage.create();
-  await this.loadData();
-}
+  constructor(private storage: Storage) {
+    this.initStorage();
+  }
 
-async saveData() {
-  const saveData = await this.storage.get('userData') || [];
-  saveData.push(this.data);
-  await this.storage.set('userData', saveData);
-  console.log('Dados salvos:', this.data);
-  this.loadData();
-  this.data = { name: '', age: null };
-}
+  async initStorage() {
+    await this.storage.create();
+    this.loadData();
+  }
 
-async loadData() {
-  const saveData = await this.storage.get('userData');
-  if (saveData) {
-  this.storedData = saveData;
-} else {
-  this.storedData = [];
-}
-console.log("Dados carregaods", this.storedData)
-}
+  async saveData() {
+    // Pega o array atual do storage
+    const existingData = (await this.storage.get('users')) || [];
+
+    // Adiciona novo dado
+    existingData.push({ ...this.data });
+
+    // Salva de volta
+    await this.storage.set('users', existingData);
+
+    // Atualiza a lista mostrada no app
+    this.storedData = existingData;
+
+    // Limpa os inputs
+    this.data.name = '';
+    this.data.age = null;
+  }
+
+  async loadData() {
+    const data = await this.storage.get('users');
+    if (data) {
+      this.storedData = data;
+    }
+  }
 }
