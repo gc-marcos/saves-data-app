@@ -1,118 +1,159 @@
-# Saves Data App 🚀
+# 📱 Save Data App
 
-Saves Data App é um aplicativo simples desenvolvido com o framework Ionic e Angular, utilizando armazenamento local. O aplicativo permite inserir, armazenar e listar dados de maneira eficiente, utilizando boas práticas de desenvolvimento.
+<div align="center">
+  <img src="https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white" alt="Ionic">
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white" alt="Capacitor">
+</div>
 
-## Tecnologias Utilizadas 💻
+<p align="center">
+  <strong>Aplicativo mobile para gerenciamento e armazenamento de dados pessoais</strong>
+</p>
 
-O aplicativo foi desenvolvido com as seguintes tecnologias:
+## 📋 Sobre o Projeto
 
-- **TypeScript**: Linguagem principal para desenvolvimento do aplicativo.
-- **SCSS**: Estilização com suporte a hierarquia e reutilização de estilos.
-- **HTML**: Estruturação das páginas do aplicativo.
-- **JavaScript**: Suporte para funcionalidades adicionais.
-- **Java**: Suporte para funcionalidades nativas.
-- **Ionic Framework**: Framework para desenvolvimento de aplicações multiplataforma.
-- **Angular**: Framework para organização do front-end.
-- **Capacitor**: Solução para integração com funções nativas do dispositivo.
+O **Save Data App** é um aplicativo mobile desenvolvido com Ionic e Angular que permite aos usuários inserir, armazenar e visualizar dados pessoais de forma simples e eficiente. O app utiliza armazenamento local para garantir que os dados sejam salvos mesmo offline.
 
-## Funcionalidades ✨
+### ✨ Funcionalidades
 
-- Inserção de dados pelo usuário.
-- Armazenamento local utilizando Capacitor Storage.
-- Listagem de dados salvos na tela inicial.
-- Interface responsiva e amigável.
+- ✅ **Inserção de Dados**: Formulário simples para adicionar nome e idade
+- ✅ **Armazenamento Local**: Dados salvos no dispositivo usando Capacitor Storage
+- ✅ **Listagem Dinâmica**: Visualização de todos os dados salvos
+- ✅ **Interface Responsiva**: Design adaptado para diferentes tamanhos de tela
+- ✅ **Offline First**: Funciona sem conexão com internet
 
-## Instalação 🛠️
+## 📱 Screenshots
 
-Para executar o projeto localmente, siga os passos abaixo:
+<div align="center">
+  <img src="./screenshots/savedDataScreen1.png" alt="App com dados salvos" width="300">
+  <img src="./screenshots/homeScreen.png" alt="Formulário vazio" width="300">
+</div>
 
-### Requisitos
+> **Funcionalidade**: O aplicativo permite inserir nome e idade, salvando automaticamente os dados que aparecem listados abaixo do formulário.
 
-- Node.js (>=16.x)
-- Ionic CLI (>=7.x)
-- Angular CLI
-- Editor de código (recomendado: Visual Studio Code)
+## 🎥 Demonstração
 
-### Passos 👣
+[saveData.webm](https://github.com/user-attachments/assets/838fbed4-a2e5-41bf-944f-36a1134de2ed)
 
-1. Clone o repositório:
+## 🚀 Tecnologias Utilizadas
 
-   ```bash
-   git clone https://github.com/seu-usuario/saves-data-app.git
-   ```
+- **[Ionic Framework](https://ionicframework.com/)** - Framework para desenvolvimento mobile
+- **[Angular](https://angular.io/)** - Framework para estrutura do front-end
+- **[TypeScript](https://www.typescriptlang.org/)** - Linguagem principal de desenvolvimento
+- **[Capacitor](https://capacitorjs.com/)** - Integração com funcionalidades nativas
+- **[SCSS](https://sass-lang.com/)** - Estilização avançada
+- **Capacitor Storage** - Armazenamento local de dados
 
-2. Navegue até o diretório do projeto:
+## 📦 Instalação e Configuração
 
-   ```bash
-   cd saves-data-app
-   ```
+### Pré-requisitos
 
-3. Instale as dependências:
+Certifique-se de ter instalado:
 
-   ```bash
-   npm install
-   ```
+- [Node.js](https://nodejs.org/) (versão 16 ou superior)
+- [Ionic CLI](https://ionicframework.com/docs/cli)
+- [Angular CLI](https://angular.io/cli)
 
-4. Execute o aplicativo em ambiente de desenvolvimento:
-
-   ```bash
-   ionic serve
-   ```
-
-5. Para testar em dispositivos físicos ou emuladores:
-
-   ```bash
-   ionic capacitor run android
-   ionic capacitor run ios
-   ```
-
-## Estrutura do Projeto 📂
-
-A estrutura do projeto segue padrões de organização recomendados pelo Ionic e Angular:
-
-```
-android/
-|-- app/                   # Componentes das páginas
-|   |-- pages/             # Páginas do aplicativo
-|   |-- services/          # Serviços reutilizáveis
-|-- assets/                # Recursos estáticos
-|-- environments/          # Configurações de ambiente
-|-- theme/                 # Arquivos SCSS e configurações de tema
+```bash
+npm install -g @ionic/cli @angular/cli
 ```
 
-## Principais Dependências 📦
+### Instalação
 
-- **@ionic/angular**: Estrutura de UI para aplicações.
-- **@capacitor/storage**: Gerenciamento de armazenamento local.
+1. **Clone o repositório**
+```bash
+git clone https://github.com/gc-marcos/saves-data-app.git
+cd saves-data-app
+```
 
-## Contribuições 🤝
+2. **Instale as dependências**
+```bash
+npm install
+```
 
-Contribuições são bem-vindas! Para contribuir:
+3. **Execute o projeto**
+```bash
+ionic serve
+```
 
-1. Faça um fork do repositório.
-2. Crie um branch para suas modificações:
-   ```bash
-   git checkout -b minha-feature
-   ```
-3. Faça commit das suas alterações:
-   ```bash
-   git commit -m "Adiciona nova feature"
-   ```
-4. Envie para o branch principal:
-   ```bash
-   git push origin minha-feature
-   ```
-5. Abra um pull request.
+### 📱 Executar no Dispositivo
 
-## Licença 📜
+**Para Android:**
+```bash
+ionic capacitor add android
+ionic capacitor run android
+```
 
-Este projeto é licenciado sob a [Licença MIT](LICENSE).
+**Para iOS:**
+```bash
+ionic capacitor add ios
+ionic capacitor run ios
+```
 
-## Contato 📧
+## 🏗️ Estrutura do Projeto
 
-Para mais informações ou suporte, entre em contato:
+```
+saves-data-app/
+├── src/
+│   ├── app/
+│   │   ├── home/              # Página principal
+│   │   ├── services/          # Serviços (Storage)
+│   │   └── app.component.ts   # Componente raiz
+│   ├── assets/                # Recursos estáticos
+│   ├── theme/                 # Estilos globais
+│   └── environments/          # Configurações de ambiente
+├── android/                   # Projeto Android nativo
+├── ios/                       # Projeto iOS nativo
+└── capacitor.config.ts        # Configurações do Capacitor
+```
 
-- **Autor**: Marcos Carvalho
-- **E-mail**: [gcmarcoss@gmail.com](mailto\:gcmarcoss@gmail.com)
-- **LinkedIn**: [linkedin.com/in/gc-marcos](https://linkedin.com/in/gc-marcos)
+## 🔧 Funcionalidades Detalhadas
 
+### Armazenamento de Dados
+- Utiliza **Capacitor Storage** para persistência local
+- Dados salvos no formato JSON
+- Funciona offline
+
+### Interface do Usuario
+- Design clean e intuitivo
+- Componentes Ionic nativos
+- Responsivo para diferentes dispositivos
+
+## 🤝 Como Contribuir
+
+1. Faça um **fork** do projeto
+2. Crie uma nova **branch** para sua feature
+```bash
+git checkout -b feature/nova-funcionalidade
+```
+
+3. **Commit** suas mudanças
+```bash
+git commit -m "Adiciona nova funcionalidade"
+```
+
+4. **Push** para a branch
+```bash
+git push origin feature/nova-funcionalidade
+```
+
+5. Abra um **Pull Request**
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+**Marcos Carvalho**
+- GitHub: [@gc-marcos](https://github.com/gc-marcos)
+- LinkedIn: [gc-marcos](https://linkedin.com/in/gc-marcos)
+- Email: gcmarcoss@gmail.com
+
+---
+
+<div align="center">
+  <p>Feito com ❤️ e Ionic</p>
+  <p>⭐ Se este projeto te ajudou, deixe uma estrela!</p>
+</div>
